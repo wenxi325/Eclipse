@@ -6,9 +6,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-private float horizontal;
+    private float horizontal;
     private float vertical;
-    public float MoveSpeed=3;
+    public float MoveSpeed = 100;
 
     private int curHealth;
 
