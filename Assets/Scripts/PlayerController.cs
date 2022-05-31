@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     private float horizontal;
     private float vertical;
-    public float MoveSpeed = 100;
+    public float MoveSpeed = 15000000;
 
     private int curHealth;
 
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
     
-        Application.targetFrameRate = 45;
+        Application.targetFrameRate = 60;
         rigidbody = GetComponent<Rigidbody2D>();
     }
 

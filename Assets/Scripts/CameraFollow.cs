@@ -17,17 +17,24 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
-        this.targetPosition = this.transform.position;
+        this.targetPosition = this.target.transform.position;
+        
+        var new_pos = this.targetPosition;
+        new_pos.z = -10f;
+        this.transform.position = new_pos;
+        Debug.Log(this.transform.position);
+        // Camera.main.orthographicSize = 2000f;
+        // this.targetPosition = this.transform.position;
     }
     
     void FixedUpdate()
     {
-        // var transPos = player.transform.position;
-        // if (this.target)
-        // {
-        //     var from = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-        //     var to = new Vector3(this.target.transform.position.x, this.transform.position.y, this.transform.position.z);
-        //     transform.position = Vector3.Lerp(from, to, this.speed);
-        // }
+        var transPos = this.target.transform.position;
+        if (this.target)
+        {
+            var from = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+            var to = new Vector3(this.target.transform.position.x, this.target.transform.position.y, this.transform.position.z);
+            transform.position = Vector3.Lerp(from, to, this.speed);
+        }
     }
 }
