@@ -23,11 +23,11 @@ public class CameraFollowPlayer : MonoBehaviour
         new_pos.z = -10f;
         this.transform.position = new_pos;
         Debug.Log(this.transform.position);
-        Camera.main.orthographicSize = 3000f;
+        Camera.main.orthographicSize = 1000f;
         this.targetPosition = this.transform.position;
     }
     
-    void FixedUpdate()
+    void Update()
     {
         var transPos = this.target.transform.position;
         if (this.target)

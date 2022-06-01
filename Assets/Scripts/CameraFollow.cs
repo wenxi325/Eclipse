@@ -23,7 +23,7 @@ public class CameraFollow : MonoBehaviour
         // new_pos.z = -10f;
         // this.transform.position = new_pos;
         // Debug.Log(this.transform.position);
-        Camera.main.orthographicSize = 2000f;
+        // Camera.main.orthographicSize = 2000f;
         this.targetPosition = this.transform.position;
     }
     
