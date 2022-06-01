@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DormDoorController : MonoBehaviour
+public class DoorController : MonoBehaviour
 {
     [SerializeField] private GameObject door;
     [SerializeField] private GameObject player;
@@ -22,6 +22,9 @@ public class DormDoorController : MonoBehaviour
         }
         else if(door.tag == "Lobby_down_left") {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else if(door.tag == "Lobby_up_right") {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
         }
         else if(door.tag == "Secret_door") {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);

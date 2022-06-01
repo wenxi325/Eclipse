@@ -1325,7 +1325,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1016599493}
+  - component: {fileID: 1016599496}
   - component: {fileID: 1016599494}
+  - component: {fileID: 1016599495}
   m_Layer: 0
   m_Name: "\u56DB\u5468\u5C0F\u95E8\uFF08\u4E4B\u4E00\uFF09"
   m_TagString: Lobby_up_right
@@ -1398,6 +1400,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1016599495
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016599492}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 3.6003985, y: 2.4962134}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.04, y: 6.48}
+    newSize: {x: 10.04, y: 6.48}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.35483742, y: 0.47711086}
+  m_EdgeRadius: 0
+--- !u!114 &1016599496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016599492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ed2a51173cfb21459f9aa25940436ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 1016599492}
+  player: {fileID: 664775724}
 --- !u!1001 &1027902021
 PrefabInstance:
   m_ObjectHideFlags: 0
