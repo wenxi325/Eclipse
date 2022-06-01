@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Start_door
   - Lobby_door_up_left
+  - Lobby_down_left
+  - Lobby_down_right
+  - Secret_door
+  - Lobby_up_right
+  - Data_exit
+  - Data_secret
   layers:
   - Default
   - TransparentFX

@@ -725,11 +725,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 688531577272006962, guid: 708820ead1cd84d35a533ba83c5ef551, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 55
+      value: 499
       objectReference: {fileID: 0}
     - target: {fileID: 688531577272006962, guid: 708820ead1cd84d35a533ba83c5ef551, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1276
+      value: 966
       objectReference: {fileID: 0}
     - target: {fileID: 909023467042734587, guid: 708820ead1cd84d35a533ba83c5ef551, type: 3}
       propertyPath: m_Name
@@ -793,7 +793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2557942823955670973, guid: 708820ead1cd84d35a533ba83c5ef551, type: 3}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2839340179898062423, guid: 708820ead1cd84d35a533ba83c5ef551, type: 3}
       propertyPath: m_Size.y
@@ -1035,7 +1035,7 @@ GameObject:
   - component: {fileID: 786454316}
   m_Layer: 0
   m_Name: "\u56DB\u5468\u5C0F\u95E8\uFF08\u4E4B\u4E00\uFF09"
-  m_TagString: Untagged
+  m_TagString: Lobby_down_left
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1140,10 +1140,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 786454313}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51d04fc9d71974ac8bd06921fe630846, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ed2a51173cfb21459f9aa25940436ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  main_door: {fileID: 786454313}
+  door: {fileID: 786454313}
   player: {fileID: 664775724}
 --- !u!1 &828988954
 GameObject:
@@ -1328,7 +1328,7 @@ GameObject:
   - component: {fileID: 1016599494}
   m_Layer: 0
   m_Name: "\u56DB\u5468\u5C0F\u95E8\uFF08\u4E4B\u4E00\uFF09"
-  m_TagString: Untagged
+  m_TagString: Lobby_up_right
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2890,7 +2890,7 @@ GameObject:
   - component: {fileID: 1804383711}
   m_Layer: 0
   m_Name: "\u56DB\u5468\u5C0F\u95E8\uFF08\u4E4B\u4E00\uFF09"
-  m_TagString: Untagged
+  m_TagString: Lobby_door_up_left
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2969,11 +2969,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1804383707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6db2debabe32a42c9add0f1434288013, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ed2a51173cfb21459f9aa25940436ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  main_door: {fileID: 1804383707}
-  player: {fileID: 664775725}
+  door: {fileID: 1804383707}
+  player: {fileID: 664775724}
 --- !u!61 &1804383711
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3045,7 +3045,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.8004231, y: -2.22091}
+  m_Offset: {x: 3.8004231, y: -2.3926349}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3056,7 +3056,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.29970837, y: 0.15138555}
+  m_Size: {x: 0.29970837, y: 0.24878097}
   m_EdgeRadius: 0
 --- !u!212 &1879641252
 SpriteRenderer:
@@ -3097,7 +3097,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 3295d826110cc82428839b77c3d5d3b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

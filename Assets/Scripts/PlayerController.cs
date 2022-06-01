@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other);
+        Debug.Log(other.tag);
         // if(collision.tag == "start_door")
         // {
         //     Debug.Log("here");
