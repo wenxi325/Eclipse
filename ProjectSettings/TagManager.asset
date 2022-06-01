@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Start_door
+  - Lobby_door_up_left
   layers:
   - Default
   - TransparentFX
