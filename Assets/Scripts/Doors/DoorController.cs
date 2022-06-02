@@ -14,30 +14,6 @@ public class DoorController : MonoBehaviour
         // var door_pos = dorm_door.transform.position;
         // Debug.Log(door_pos);
         Debug.Log(door.tag);
-        // if(door.tag == "Start_door") {
-        //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        // }
-        // else if(door.tag == "Lobby_door_up_left") {
-        //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        // }
-        // else if(door.tag == "Lobby_down_left") {
-        //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        // }
-        // else if(door.tag == "Lobby_up_right") {
-        //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
-        // }
-        // else if(door.tag == "Secret_door") {
-        //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        // }
-        // else if(door.tag == "Data_secret") {
-        //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        // }
-        // else if(door.tag == "Data_exit") {
-        //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
-        // }
-        // else if(door.tag == "Working_exit") {
-        //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        // }
         switch(door.tag) {
             case "Start_door":
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -81,9 +57,4 @@ public class DoorController : MonoBehaviour
         // Debug.Log("player pos: ");
         // Debug.Log(player_pos);
     }
-
-    // void Update()
-    // {
-
-    // }
 }
