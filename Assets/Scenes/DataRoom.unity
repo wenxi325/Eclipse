@@ -242,11 +242,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1914813645481417855, guid: 708820ead1cd84d35a533ba83c5ef551, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10035
+      value: 10978
       objectReference: {fileID: 0}
     - target: {fileID: 1914813645481417855, guid: 708820ead1cd84d35a533ba83c5ef551, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3925
+      value: 4076
       objectReference: {fileID: 0}
     - target: {fileID: 1914813645481417855, guid: 708820ead1cd84d35a533ba83c5ef551, type: 3}
       propertyPath: m_LocalPosition.z
@@ -282,7 +282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2557942823955670973, guid: 708820ead1cd84d35a533ba83c5ef551, type: 3}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2839340179898062423, guid: 708820ead1cd84d35a533ba83c5ef551, type: 3}
       propertyPath: m_Size.y
@@ -814,7 +814,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
+<<<<<<< Updated upstream
   m_Offset: {x: 0, y: 0.15101282}
+=======
+  m_Offset: {x: 0.0041515827, y: -1.187017}
+>>>>>>> Stashed changes
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -825,7 +829,11 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
+<<<<<<< Updated upstream
   m_Size: {x: 3.4, y: 0.021187097}
+=======
+  m_Size: {x: 3.3759289, y: 0.0001}
+>>>>>>> Stashed changes
   m_EdgeRadius: 0
 --- !u!212 &1130650869
 SpriteRenderer:
@@ -1398,7 +1406,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 314d3d7ea247c864ca39540267ecb19d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1630,6 +1638,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 1969809005}
   player: {fileID: 174847085}
+<<<<<<< Updated upstream
+=======
+--- !u!68 &1969809014
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969809005}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.17934585, y: 0.47410858}
+  - {x: 0.18505013, y: 0.9557716}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!68 &1969809015
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969809005}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.17200959, y: 0.47765088}
+  - {x: -0.17086399, y: 0.9583259}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+>>>>>>> Stashed changes
 --- !u!1 &2030384111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,6 +1695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2030384112}
   - component: {fileID: 2030384113}
+  - component: {fileID: 2030384114}
   m_Layer: 0
   m_Name: "\u63A7\u5236\u53F0"
   m_TagString: Untagged
@@ -1700,7 +1756,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 461be22d84763dc4a823a33fb12e1f87, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1712,6 +1768,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< Updated upstream
 --- !u!1001 &2075666675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1774,6 +1831,34 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9214187132782147852, guid: 6648936da8a294e419d4ef4271d3ff9d, type: 3}
   m_PrefabInstance: {fileID: 2075666675}
   m_PrefabAsset: {fileID: 0}
+=======
+--- !u!61 &2030384114
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030384111}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.025550157, y: -0.5769484}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.4, y: 2.4}
+    newSize: {x: 3.4, y: 2.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3137089, y: 0.028165042}
+  m_EdgeRadius: 0
+>>>>>>> Stashed changes
 --- !u!1 &2100902751
 GameObject:
   m_ObjectHideFlags: 0
