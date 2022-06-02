@@ -69,6 +69,9 @@ public class DoorController : MonoBehaviour
             case "Plant_enter":
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
                 break;
+            case "Starting_game":
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 6);
+                break;
             default:
                 break;
         }

@@ -15,6 +15,7 @@ TagManager:
   - Working_exit
   - Plant_exit
   - Plant_enter
+  - Starting_game
   layers:
   - Default
   - TransparentFX
