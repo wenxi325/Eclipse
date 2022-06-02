@@ -57,4 +57,9 @@ public class DoorController : MonoBehaviour
         // Debug.Log("player pos: ");
         // Debug.Log(player_pos);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("collided");
+    }
 }
