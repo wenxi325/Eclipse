@@ -12,6 +12,9 @@ TagManager:
   - Lobby_up_right
   - Data_exit
   - Data_secret
+  - Working_exit
+  - Plant_exit
+  - Plant_enter
   layers:
   - Default
   - TransparentFX
