@@ -48,6 +48,9 @@ public class DoorController : MonoBehaviour
             case "Starting_game":
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 6);
                 break;
+            case "exit_btn":
+                SceneManager.LoadScene(6);
+                break;
             default:
                 break;
         }
