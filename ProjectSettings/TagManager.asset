@@ -17,6 +17,7 @@ TagManager:
   - Plant_enter
   - Starting_game
   - exit_btn
+  - nextPate
   layers:
   - Default
   - TransparentFX
