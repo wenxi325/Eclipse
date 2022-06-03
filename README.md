@@ -48,7 +48,8 @@ The `CameraFollowPlayer.cs` will have a slight difference with the previous came
 ### Main Character Transport
 In order to perform character transport properly, I decided to separate 6 different scenes, each scene represents one room and the main character will be able to transport via doors.
 
-To achieve that goal, the door prefabs must have a collider and disable `isTrigger` so that the main character can collide with the door. 
+To achieve that goal, the door prefabs must have a collider and disable `isTrigger` so that the main character can collide with the door. In this case, `Box Collider 2D` will be sufficient since the door is rectangle shape. Moreover, I created 13 more tags so that I can keep track of which door the player has collided with. Below is an example of doors that can transport player back to the dorm room:
+![Door exmaple](./door_transport_example.png)
 
 ## Animation and Visuals
 
