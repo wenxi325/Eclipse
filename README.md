@@ -27,8 +27,6 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 ## User Interface
 
-**Describe your user interface and how it relates to gameplay. This can be done via the template.**
-
 ## Movement/Physics - [Huilin Zhang]
 
 **Describe the basics of movement and physics in your game. Is it the standard physics model? What did you change or modify? Did you make your movement scripts that do not use the physics system?**
@@ -116,7 +114,6 @@ Similar to the doors, the exit buttons also have a `Box Collider 2D` but enable 
 
 ## Game Feel - [Huilin Zhang]
 
-**Document what you added to and how you tweaked your game to improve its game feel.**
 ### Scenes Loading
 ###### **Small Scenes**
 After receving all the artworks in *.psd* form, I load the all the items into Unity and ajust the scale of all the scenes until it looks comfortable to play. In other words, the small rooms can be fit into camera view and people can see the entire room settings without moving around. As a result, for small rooms, I find the best scale which is `563.1652`. Since the scenes are scaled up, the main character also needs to scale up. 
