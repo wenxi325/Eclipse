@@ -46,27 +46,27 @@ The `CameraFollow.cs` doesn't have any update functions because it is responsibl
 The `CameraFollowPlayer.cs` will have a slight difference with the previous camera script. I initialize the camera starting position to be same as the player's position. However, since the script is for larger scenes, where the player cannot view the complete scene and need to move around to see the complete room view, the script will have an update function that move as the player moves. In `Update()`, I first detect if the player has moved, then record the new position except the z-axis. Lastly, use the function I learned in exercise 2 (`Vector3.lerp()`) to make camera moves along with the player. https://github.com/wenxi325/Eclipse/blob/af88556bd83cd9411c60bf9d565730843c7eec64/Assets/Scripts/CameraFollowPlayer.cs#L35-L37
 
 ### Main Character Transport
-###### Overall
+###### **Overall**
 In order to perform character transport properly, I decided to separate 6 different scenes, each scene represents one room and the main character will be able to transport via doors.
 
-To achieve that goal, the door prefabs must have a collider and disable `isTrigger` so that the main character can collide with the door. In this case, `Box Collider 2D` will be sufficient since the door is rectangle shape. Moreover, I created 13 more tags so that I can keep track of which door the player has collided with. Below is an example of doors that can transport player back to the dorm room:
-![Door exmaple](./door_transport_example.png)
+To achieve that goal, the door prefabs must have a collider and disable *isTrigger* so that the main character can collide with the door. In this case, `Box Collider 2D` will be sufficient since the door is rectangle shape. Moreover, I created 13 more tags so that I can keep track of which door the player has collided with. Below is an example of doors that can transport player back to the dorm room:
+![Door exmaple](./images/door_transport_example.png)
 
 As you can see, I set the box collider at the top of the door instead of fill out the entire door. That is because if I set collider's shape to be the same as the door, the player will immedately be tranported when he just touched door's bottom line. However, the player will be transported only when he steps into the door. Hence, I leave some spaces for player to move around and transport him when he really tries to enter the door.
 
-###### Implementation (Script)
+###### **Implementation (Script)**
 The `DoorController.cs` script in the `Doors` folder manages the door transportations. Inside the script, depending on the tag that current door has, will switch to different scenes by modifying the build scene index. I have created 6 scenes and added them to the build settings in order when I created them. Below is a screenshot of the build settings in our game:
-![Build setting](./build_setting.png)
+![Build setting](./images/build_setting.png)
 
 Here is an example of how my script will work: Let's say the player enters a door that has a tag "Lobby_up_right", indicates that he is trying to enter the up-right door in the lobby. In our settings, the up-right lobby door is connected to the data room. The `Lobby` scene is at *level 1* while the `DataRoom` scene is at *level 3*, so I will add 2 to the current `buildIndex` so that it gets to the `DataRoom` scene.
 https://github.com/wenxi325/Eclipse/blob/a9165cc5ffed2a679cfe4389daff6c5e2e0f9dd0/Assets/Scripts/Doors/DoorController.cs#L75-L77
 On the other hand, if the player is trying to go back to the `Lobby` from `DataRoom`, subtract 2 from the `buildIndex` to reach *level 1*.https://github.com/wenxi325/Eclipse/blob/a9165cc5ffed2a679cfe4389daff6c5e2e0f9dd0/Assets/Scripts/Doors/DoorController.cs#L84-L86
 
-###### Exit Button
+###### **Exit Button**
 There is an exit button at the upper right corner which will be back to the very beginning entering scene. For simplicity, I didn't create a separate script to manage the exit button. Instead, I assign all the exit buttons in all scenes with a *exit_btn* tag. Inside the function `OnMouseDown()`, if the *exit_btn* tag is clicked, load the `EnteringGame` scene immediately no matter where the player is currently at.https://github.com/wenxi325/Eclipse/blob/a9165cc5ffed2a679cfe4389daff6c5e2e0f9dd0/Assets/Scripts/Doors/DoorController.cs#L51-L53
 
 Similar to the doors, the exit buttons also have a `Box Collider 2D` but enable the *isTrigger* option. Here is an example of the exit button:
-![Exit button](./exit_btn_example.png)
+![Exit button](./images/exit_btn_example.png)
 
 
 ## Animation and Visuals
@@ -113,6 +113,30 @@ Similar to the doors, the exit buttons also have a `Box Collider 2D` but enable 
 
 
 
-## Game Feel
+## Game Feel - [Huilin Zhang]
 
 **Document what you added to and how you tweaked your game to improve its game feel.**
+### Scenes Loading
+###### **Small Scenes**
+After receving all the artworks in *.psd* form, I load the all the items into Unity and ajust the scale of all the scenes until it looks comfortable to play. In other words, the small rooms can be fit into camera view and people can see the entire room settings without moving around. As a result, for small rooms, I find the best scale which is `563.1652`. Since the scenes are scaled up, the main character also needs to scale up. 
+![Small scene](./images/small_scene_example.png)
+
+###### **Large Scene(Lobby)**
+The lobby scene will not need that much scale up, instead, it only needs to scale up by `123.2818`. I got this number by comparing the player's size and the robot size in the lobby scene. The player is a little shorter than the robot:
+![Large scene](./images/large_scene_example.png)
+
+###### **Modify Colliders**
+**Box Collider 2D**
+Visually, it will look awkward if I don't modify all the collider shapes. For example, when the character walks around the dormant bin, he should be able to cross the dormant bin once his legs are below the bottom line of the dormant bin. 
+![Dormant bin](./images/dormant_bin.png)
+The red rectangle represents the modified collider shape, which cuts almost half of the dormant bin's height. In contrast, if the red rectangle has the same height as the dormant bin, the character will not be able to cross the dormant bins and will be weird visually. Similar to across the robots, since the character's layer order is higher than robots, the character will cover robot's part as he walk across them. As a result, adding a box collider to the robot that has a shape of robot's head will look reasonable.
+![Robot box](./images/robot_box.png)
+
+Box colliders can also be used to prevent the main character walk upon walls. In most of the rooms, I add a bunch box colliders on the wall so that the character cannot walk on the walls. The height of the box will be half of wall's height so that makes the character look like he is walking along the wall.
+![Wall box](./images/wall_box.png)
+
+Another example of using box collider is all the control panels. Since the game is in 2D but all drawings are almost 3D. To make it visually reasonable, I modify the box collider as shown below:
+![Control1 box](./images/control1_box.png)
+![Control2 box](./images/control2_box.png)
+I have made two different visualizations upon the two types of control panels. The first one's order layer is higher than the character so he can only walk at the back of the control panel. The second one's order layer is lower so the character can walk in fron of it.
+**Edge Collider 2D**
