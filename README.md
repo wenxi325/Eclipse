@@ -41,15 +41,33 @@ Then in every updates, I created two variables to keep track of whether the play
 ### Camera Movement
 There are two camera movement scripts, one is for small rooms or small scenes, another one is for the larger scene, in this case, the lobby. The `CameraFollow.cs` and `CameraFollowPlayer.cs` will be responsible for the camera movement.
 
-The `CameraFollow.cs` doesn't have any update functions because it is responsible for small scenes that the player can view the entire scene/room without moving the main character around. As a result, I set the camera starting position to be the same as main character's current position and not updating the camera anymore. (https://github.com/wenxi325/Eclipse/blob/af88556bd83cd9411c60bf9d565730843c7eec64/Assets/Scripts/CameraFollow.cs#L27)
+The `CameraFollow.cs` doesn't have any update functions because it is responsible for small scenes that the player can view the entire scene/room without moving the main character around. As a result, I set the camera starting position to be the same as main character's current position and not updating the camera anymore. https://github.com/wenxi325/Eclipse/blob/af88556bd83cd9411c60bf9d565730843c7eec64/Assets/Scripts/CameraFollow.cs#L27
 
-The `CameraFollowPlayer.cs` will have a slight difference with the previous camera script. I initialize the camera starting position to be same as the player's position. However, since the script is for larger scenes, where the player cannot view the complete scene and need to move around to see the complete room view, the script will have an update function that move as the player moves. In `Update()`, I first detect if the player has moved, then record the new position except the z-axis. Lastly, use the function I learned in exercise 2 (`Vector3.lerp()`) to make camera moves along with the player. (https://github.com/wenxi325/Eclipse/blob/af88556bd83cd9411c60bf9d565730843c7eec64/Assets/Scripts/CameraFollowPlayer.cs#L35-L37)
+The `CameraFollowPlayer.cs` will have a slight difference with the previous camera script. I initialize the camera starting position to be same as the player's position. However, since the script is for larger scenes, where the player cannot view the complete scene and need to move around to see the complete room view, the script will have an update function that move as the player moves. In `Update()`, I first detect if the player has moved, then record the new position except the z-axis. Lastly, use the function I learned in exercise 2 (`Vector3.lerp()`) to make camera moves along with the player. https://github.com/wenxi325/Eclipse/blob/af88556bd83cd9411c60bf9d565730843c7eec64/Assets/Scripts/CameraFollowPlayer.cs#L35-L37
 
 ### Main Character Transport
+###### Overall
 In order to perform character transport properly, I decided to separate 6 different scenes, each scene represents one room and the main character will be able to transport via doors.
 
 To achieve that goal, the door prefabs must have a collider and disable `isTrigger` so that the main character can collide with the door. In this case, `Box Collider 2D` will be sufficient since the door is rectangle shape. Moreover, I created 13 more tags so that I can keep track of which door the player has collided with. Below is an example of doors that can transport player back to the dorm room:
 ![Door exmaple](./door_transport_example.png)
+
+As you can see, I set the box collider at the top of the door instead of fill out the entire door. That is because if I set collider's shape to be the same as the door, the player will immedately be tranported when he just touched door's bottom line. However, the player will be transported only when he steps into the door. Hence, I leave some spaces for player to move around and transport him when he really tries to enter the door.
+
+###### Implementation (Script)
+The `DoorController.cs` script in the `Doors` folder manages the door transportations. Inside the script, depending on the tag that current door has, will switch to different scenes by modifying the build scene index. I have created 6 scenes and added them to the build settings in order when I created them. Below is a screenshot of the build settings in our game:
+![Build setting](./build_setting.png)
+
+Here is an example of how my script will work: Let's say the player enters a door that has a tag "Lobby_up_right", indicates that he is trying to enter the up-right door in the lobby. In our settings, the up-right lobby door is connected to the data room. The `Lobby` scene is at *level 1* while the `DataRoom` scene is at *level 3*, so I will add 2 to the current `buildIndex` so that it gets to the `DataRoom` scene.
+https://github.com/wenxi325/Eclipse/blob/a9165cc5ffed2a679cfe4389daff6c5e2e0f9dd0/Assets/Scripts/Doors/DoorController.cs#L75-L77
+On the other hand, if the player is trying to go back to the `Lobby` from `DataRoom`, subtract 2 from the `buildIndex` to reach *level 1*.https://github.com/wenxi325/Eclipse/blob/a9165cc5ffed2a679cfe4389daff6c5e2e0f9dd0/Assets/Scripts/Doors/DoorController.cs#L84-L86
+
+###### Exit Button
+There is an exit button at the upper right corner which will be back to the very beginning entering scene. For simplicity, I didn't create a separate script to manage the exit button. Instead, I assign all the exit buttons in all scenes with a *exit_btn* tag. Inside the function `OnMouseDown()`, if the *exit_btn* tag is clicked, load the `EnteringGame` scene immediately no matter where the player is currently at.https://github.com/wenxi325/Eclipse/blob/a9165cc5ffed2a679cfe4389daff6c5e2e0f9dd0/Assets/Scripts/Doors/DoorController.cs#L51-L53
+
+Similar to the doors, the exit buttons also have a `Box Collider 2D` but enable the *isTrigger* option. Here is an example of the exit button:
+![Exit button](./exit_btn_example.png)
+
 
 ## Animation and Visuals
 
