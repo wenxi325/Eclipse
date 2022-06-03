@@ -14,50 +14,64 @@ public class DoorController : MonoBehaviour
         Debug.Log(door.tag);
         switch(door.tag) {
             case "Starting_game":
+                // SoundManager.sfxInstance.Audio.PlayOneShot(SoundManager.sfxInstance.Click);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 6);
                 break;
             case "exit_btn":
+                // SoundManager.sfxInstance.Audio.PlayOneShot(SoundManager.sfxInstance.Click);
                 SceneManager.LoadScene(6);
                 break;
             default:
                 break;
         }
     }
+
     private void changeScene()
     {
         switch(door.tag) {
             case "Start_door":
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                SoundManager.sfxInstance.Audio.PlayOneShot(SoundManager.sfxInstance.Click);
                 break;
             case "Lobby_door_up_left":
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+                SoundManager.sfxInstance.Audio.PlayOneShot(SoundManager.sfxInstance.Click);
                 break;
             case "Lobby_down_left":
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                SoundManager.sfxInstance.Audio.PlayOneShot(SoundManager.sfxInstance.Click);
                 break;
             case "Lobby_up_right":
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+                SoundManager.sfxInstance.Audio.PlayOneShot(SoundManager.sfxInstance.Click);
                 break;
             case "Secret_door":
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+                SoundManager.sfxInstance.Audio.PlayOneShot(SoundManager.sfxInstance.Click);
                 break;
             case "Data_secret":
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                SoundManager.sfxInstance.Audio.PlayOneShot(SoundManager.sfxInstance.Click);
                 break;
             case "Data_exit":
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+                SoundManager.sfxInstance.Audio.PlayOneShot(SoundManager.sfxInstance.Click);
                 break;
             case "Working_exit":
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+                SoundManager.sfxInstance.Audio.PlayOneShot(SoundManager.sfxInstance.Click);
                 break;
             case "Plant_exit":
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 4);
+                SoundManager.sfxInstance.Audio.PlayOneShot(SoundManager.sfxInstance.Click);
                 break;
             case "Plant_enter":
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
+                SoundManager.sfxInstance.Audio.PlayOneShot(SoundManager.sfxInstance.Click);
                 break;
             case "Starting_game":
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 6);
+                SoundManager.sfxInstance.Audio.PlayOneShot(SoundManager.sfxInstance.Click);
                 break;
             default:
                 break;
