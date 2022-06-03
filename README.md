@@ -50,6 +50,7 @@ The `CameraFollowPlayer.cs` will have a slight difference with the previous came
 In order to perform character transport properly, I decided to separate 6 different scenes, each scene represents one room and the main character will be able to transport via doors.
 
 To achieve that goal, the door prefabs must have a collider and disable *isTrigger* so that the main character can collide with the door. In this case, `Box Collider 2D` will be sufficient since the door is rectangle shape. Moreover, I created 13 more tags so that I can keep track of which door the player has collided with. Below is an example of doors that can transport player back to the dorm room:
+
 ![Door exmaple](./images/door_transport_example.png)
 
 As you can see, I set the box collider at the top of the door instead of fill out the entire door. That is because if I set collider's shape to be the same as the door, the player will immedately be tranported when he just touched door's bottom line. However, the player will be transported only when he steps into the door. Hence, I leave some spaces for player to move around and transport him when he really tries to enter the door.
@@ -129,6 +130,7 @@ The lobby scene will not need that much scale up, instead, it only needs to scal
 **Box Collider 2D**
 Visually, it will look awkward if I don't modify all the collider shapes. For example, when the character walks around the dormant bin, he should be able to cross the dormant bin once his legs are below the bottom line of the dormant bin. 
 ![Dormant bin](./images/dormant_bin.png)
+
 The red rectangle represents the modified collider shape, which cuts almost half of the dormant bin's height. In contrast, if the red rectangle has the same height as the dormant bin, the character will not be able to cross the dormant bins and will be weird visually. Similar to across the robots, since the character's layer order is higher than robots, the character will cover robot's part as he walk across them. As a result, adding a box collider to the robot that has a shape of robot's head will look reasonable.
 ![Robot box](./images/robot_box.png)
 
@@ -138,5 +140,8 @@ Box colliders can also be used to prevent the main character walk upon walls. In
 Another example of using box collider is all the control panels. Since the game is in 2D but all drawings are almost 3D. To make it visually reasonable, I modify the box collider as shown below:
 ![Control1 box](./images/control1_box.png)
 ![Control2 box](./images/control2_box.png)
-I have made two different visualizations upon the two types of control panels. The first one's order layer is higher than the character so he can only walk at the back of the control panel. The second one's order layer is lower so the character can walk in fron of it.
+
+I have made two different visualizations of the two types of control panels. The first one's order layer is higher than the character so he can only walk at the back of the control panel. The second one's order layer is lower so the character can walk in front of it.
+
 **Edge Collider 2D**
+Without setting edges of the scenes, the character can go off the scene and lost in the entire space. As a result, *Edge Collider* plays a significant role in restricting the player to stay in place. In every scene excluding the `EnteringGame` scene, I create boundaries around the room by using *Edge Collider*. Below is an example of combining <span style="color:red">*Box Collider*</span> and *Edge Collider*.
