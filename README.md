@@ -128,6 +128,7 @@ The lobby scene will not need that much scale up, instead, it only needs to scal
 
 ###### **Modify Colliders**
 **Box Collider 2D**
+
 Visually, it will look awkward if I don't modify all the collider shapes. For example, when the character walks around the dormant bin, he should be able to cross the dormant bin once his legs are below the bottom line of the dormant bin. 
 ![Dormant bin](./images/dormant_bin.png)
 
@@ -144,4 +145,11 @@ Another example of using box collider is all the control panels. Since the game 
 I have made two different visualizations of the two types of control panels. The first one's order layer is higher than the character so he can only walk at the back of the control panel. The second one's order layer is lower so the character can walk in front of it.
 
 **Edge Collider 2D**
-Without setting edges of the scenes, the character can go off the scene and lost in the entire space. As a result, *Edge Collider* plays a significant role in restricting the player to stay in place. In every scene excluding the `EnteringGame` scene, I create boundaries around the room by using *Edge Collider*. Below is an example of combining <span style="color:red">*Box Collider*</span> and *Edge Collider*.
+
+Without setting edges of the scenes, the character can go off the scene and lost in the entire space. As a result, *Edge Collider* plays a significant role in restricting the player to stay in place. In every scene excluding the `EnteringGame` scene, I create boundaries around the room by using *Edge Collider*. Below is an example of combining *Box Collider*(in red) and *Edge Collider*(in pink).
+![Edge example](./images/edge_example.png)
+
+**Polygon Collider 2D**
+
+The *Polygon Collider* is suitable for prefabs that are not in a regular shape. In this case, a semi-circle table is neither a rectangle nor a capsule. At this situation, a polygon collider will perfectly resolve the problem. I use 10 points and connect them together to trace a similar shape of semi-circle table. After applying the 2D visualization as mentioned previously, I need to leave some spaces for the character to walk along with the table. Below is the polygon collider I created for the table:
+![Lobby desk](./images/lobby_desk_example.png)
