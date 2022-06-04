@@ -86,13 +86,38 @@ Similar to the doors, the exit buttons also have a `Box Collider 2D` but enable 
 
 # Sub-Roles
 
-## Audio
+## Audio - [Huilin Zhang]
 
-**List your assets including their sources and licenses.**
+### List of Assets & Sources
 
-**Describe the implementation of your audio system.**
+**Adapted from "Electric Door Sound Effect HD: https://www.youtube.com/watch?v=LxzBlorJ8ec**
+- OpenDoor.mp3
+
+**Below are from https://www.bensound.com:**
+- betterdays.mp3
+- dreams.mp3
+- EnterGame.mp3
+- november.mp3
+- relaxing.mp3
+- sadday.mp3
+- thelounge.mp3
 
 **Document the sound style.** 
+### Background Music
+
+###### Style / Theme
+Our main story is relating to escape from a place, so the overall background music should not be energizing or hopeful. Instead, I think the genres or the moods that will best fit to our game will be suspenseful, acoustic, and ambient. As a result, I skip all the energetic and positive music when choosing the background music. I end up choosing music that is moderately slow and calm, some of them also give people a sense of staying in the aerospace.
+
+###### Doors Sound Effects
+For finding the sound effects for opening the door, I try to find them by including the word *electronic* since our background stories are all relevant to the future which is full of electronic devices. So the doors during that period of time will also be more "advanced" instead of wooden doors nowadays.
+
+### Implementation of Audio System
+There is a total of 7 different scenes, one for the game entrance, and the rest of them each representing a room. So I pick seven different background music to make the game more enjoyable and improve the game feel. In each scene, I create an empty object named `BGM` which stands for background music, and it contains an audio source component and applies the corresponding `AudioClip` to each of the audio sources. That way, the background music will be loaded for every scene change, along with distinct music. 
+![Sound sources](./images/sound_sources.png)
+
+The implementation of doors opening sound effect is done in the `Dorm` scene by creating an empty object named `SoundManager`, attached with the `SoundManager.cs` script and an audio source component. Inside the script, I use the `DontDestroyOnLoad()` function to prevent the destruction of the sound instance for scene switches. Since all doors will have identical sound effects, I play the sound effect every time the main character enters or exits the door and perform a scene switch.
+https://github.com/wenxi325/Eclipse/blob/8f57430afdbe6a958e7b04807eab52b631a0e8b2/Assets/Scripts/Doors/DoorController.cs#L34
+
 
 ## Gameplay Testing
 

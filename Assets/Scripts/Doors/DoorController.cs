@@ -7,19 +7,17 @@ public class DoorController : MonoBehaviour
 {
     [SerializeField] private GameObject door;
     [SerializeField] private GameObject player;
-    private bool door_clicked = false;
+    // private bool door_clicked = false;
     void OnMouseDown()
     {
         Debug.Log("dorm_door click!");
         Debug.Log(door.tag);
         switch(door.tag) {
             case "Starting_game":
-                // SoundManager.sfxInstance.Audio.PlayOneShot(SoundManager.sfxInstance.Click);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 6);
+                SceneManager.LoadScene(1);
                 break;
             case "exit_btn":
-                // SoundManager.sfxInstance.Audio.PlayOneShot(SoundManager.sfxInstance.Click);
-                SceneManager.LoadScene(6);
+                SceneManager.LoadScene(0);
                 break;
             default:
                 break;
