@@ -102,7 +102,6 @@ Similar to the doors, the exit buttons also have a `Box Collider 2D` but enable 
 - sadday.mp3
 - thelounge.mp3
 
-**Document the sound style.** 
 ### Background Music
 
 ###### Style / Theme
