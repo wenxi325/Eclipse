@@ -6,10 +6,14 @@ public class dialigueTrigger : MonoBehaviour
 {
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
+    [SerializeField] private int followUpEvent;
+
+    public bool endDialog;
     private bool playerInRange;
 
     private void Awake(){
         playerInRange = false;
+        endDialog=false;
 
     }
 
@@ -17,9 +21,10 @@ public class dialigueTrigger : MonoBehaviour
         //Debug.Log(playerInRange);
         if(playerInRange)
         {
-            if(Input.GetMouseButtonDown(0)){
-                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+            if(Input.GetKeyDown(KeyCode.Space)){
+                DialogueManager.GetInstance().EnterDialogueMode(inkJSON, followUpEvent);
                 Debug.Log("got here");
+                endDialog=true;
 
             }
             
@@ -35,7 +40,7 @@ public class dialigueTrigger : MonoBehaviour
         if(collider.gameObject.tag == "Player"){
             playerInRange = true;
         }
-        Debug.Log(collider.gameObject.tag);   
+        // Debug.Log(collider.gameObject.tag);
 
 
     }
@@ -44,7 +49,7 @@ public class dialigueTrigger : MonoBehaviour
         if(collider.gameObject.tag == "Player"){
             playerInRange = false;
         } 
-        Debug.Log("exit");       
+        // Debug.Log("exit");       
 
     }
 

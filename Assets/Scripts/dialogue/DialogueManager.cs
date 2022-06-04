@@ -12,13 +12,17 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] private GameObject nextButton;
 
+    
+
     [Header("Choice UI")]
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
+    private int chooseEvent;
 
     private Story currentStory;
     private bool dialogueIsPlaying;
     private static DialogueManager instance;
+
     private void Awake()
     {
         if(instance != null)
@@ -54,7 +58,7 @@ public class DialogueManager : MonoBehaviour
         }
         //RaycastHit2D hits2D = Physics2D.GetRayIntersection()
         
-        if(Input.GetMouseButtonDown(1))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
 
             ContinueStory();
@@ -84,9 +88,12 @@ public class DialogueManager : MonoBehaviour
 
     //  }
 
-    public void EnterDialogueMode(TextAsset inkJSON)
+    public void EnterDialogueMode(TextAsset inkJSON, int followUpEvent)
     {
+        Debug.Log("enter dialog");
+        chooseEvent = followUpEvent;
         currentStory = new Story(inkJSON.text);
+        Debug.Log(currentStory.Continue());
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
         ContinueStory();
@@ -98,6 +105,8 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         dialogueIsPlaying = false;
         dialogueText.text = "";
+        Debug.Log("exitDialogueMode");
+        // Item.GetInstance().FollowUpevent();
 
     }
 
@@ -106,6 +115,7 @@ public class DialogueManager : MonoBehaviour
         if(currentStory.canContinue)
         {
             dialogueText.text = currentStory.Continue();
+            Debug.Log(dialogueText.text);
 
         }
         else
