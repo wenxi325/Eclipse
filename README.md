@@ -131,8 +131,25 @@ https://github.com/wenxi325/Eclipse/blob/8f57430afdbe6a958e7b04807eab52b631a0e8b
 ## Press Kit and Trailer
 
 **Include links to your presskit materials and trailer.**
+(press kit is made through google site)
+https://sites.google.com/ucdavis.edu/ecplise/home?authuser=0
 
 **Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
+
+For the presskit, at first I was trying to use cyberduck, myDNS, and presskit() and presskit static html version on github to create presskit. However, due to installation difficulty and domain name issue and long loading time for w3school SPACE, I ended up using google site to create the press kit.
+
+The Presskit consists of three tabs: Home, Trailer, Background, and Contact. The Home page contains screenshots for each room and some interesting UI such as the status in the main lobby. By providing a horizontal auto scrolling image gallery for all the screenshots in the main page, the user can eaily understand what the game is like, what is the genre, the visual design and to determine if they want to know more about the game quickly. Beside that, the Home page also contains short description for the game to conclude what would player expect to know about the game before playing.
+**Home Page Cover**
+<img width="1309" alt="Screen Shot 2022-06-05 at 2 31 59 AM" src="https://user-images.githubusercontent.com/50162500/172044385-175874f6-07ae-4aa6-98ef-6cdcce614a57.png">
+**Home Page Image Gallery**
+<img width="1309" alt="Screen Shot 2022-06-05 at 2 32 18 AM" src="https://user-images.githubusercontent.com/50162500/172044393-99e57f80-d345-4156-95ce-4a289b23f856.png">
+
+
+###Trailer###
+The trailer is made through iMovie on Mac, and uploaded to youtube, then use it in the press kit website to allow user to directly watch the trailer on the website without being redirecting.
+Link for trailer on youtube:
+https://youtu.be/OSbZsvEJNbA 
+
 
 
 
