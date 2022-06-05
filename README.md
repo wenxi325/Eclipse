@@ -139,16 +139,47 @@ https://sites.google.com/ucdavis.edu/ecplise/home?authuser=0
 For the presskit, at first I was trying to use cyberduck, myDNS, and presskit() and presskit static html version on github to create presskit. However, due to installation difficulty and domain name issue and long loading time for w3school SPACE, I ended up using google site to create the press kit.
 
 The Presskit consists of three tabs: Home, Trailer, Background, and Contact. The Home page contains screenshots for each room and some interesting UI such as the status in the main lobby. By providing a horizontal auto scrolling image gallery for all the screenshots in the main page, the user can eaily understand what the game is like, what is the genre, the visual design and to determine if they want to know more about the game quickly. Beside that, the Home page also contains short description for the game to conclude what would player expect to know about the game before playing.
+
 **Home Page Cover**
 <img width="1309" alt="Screen Shot 2022-06-05 at 2 31 59 AM" src="https://user-images.githubusercontent.com/50162500/172044385-175874f6-07ae-4aa6-98ef-6cdcce614a57.png">
 **Home Page Image Gallery**
 <img width="1309" alt="Screen Shot 2022-06-05 at 2 32 18 AM" src="https://user-images.githubusercontent.com/50162500/172044393-99e57f80-d345-4156-95ce-4a289b23f856.png">
+Using Image Gallery will save many spcae on the website, which prevent presenting too much information all at one time.
+
+The presskit's Trailer page contain video from youtube for our game, as well as one paragraph to describe why I selected those components/elements in the trailer to better assist user to understand the trailer and the connection it has to the game.
+<img width="1277" alt="Screen Shot 2022-06-05 at 3 04 37 PM" src="https://user-images.githubusercontent.com/50162500/172072761-b51d52de-b4dd-40a1-b16a-9939bacf6884.png">
+
+The Background tab explains the story background for the game, and provided screenshot for the floor mapping of the game and the game flow expected to guide user have a better understanding of the game.
+<img width="1277" alt="Screen Shot 2022-06-05 at 3 04 59 PM" src="https://user-images.githubusercontent.com/50162500/172072794-cfa160bb-0a68-4d13-9e45-2a28eb2a16d7.png"><img width="1277" alt="Screen Shot 2022-06-05 at 3 05 05 PM" src="https://user-images.githubusercontent.com/50162500/172072813-d1630b4f-f5ff-43e6-99cd-c466dd7c1068.png">
 
 
-###Trailer###
+I also created a separate tab for contact information for the group beside having all the group members name at the footer for each page.
+<img width="1277" alt="Screen Shot 2022-06-05 at 3 05 12 PM" src="https://user-images.githubusercontent.com/50162500/172072817-6b4007b8-3c70-4fd8-b375-a60eeeb4babe.png">
+
+
+**Trailer**
 The trailer is made through iMovie on Mac, and uploaded to youtube, then use it in the press kit website to allow user to directly watch the trailer on the website without being redirecting.
 Link for trailer on youtube:
 https://youtu.be/OSbZsvEJNbA 
+
+The trailer in the iMovie is combined with clips of the game and screenshots, as well as some background music and sound effects that are provided by iMovie itself. And between the clips, I used transition effect and pur text with dark background to help smoothen the trailer to connect clips together.
+
+<img width="1440" alt="Screen Shot 2022-06-05 at 3 56 04 AM" src="https://user-images.githubusercontent.com/50162500/172072825-74116a99-b366-41c6-aa40-4700b09fe9d3.png">
+<img width="1194" alt="Screen Shot 2022-06-05 at 3 56 47 AM" src="https://user-images.githubusercontent.com/50162500/172072826-883f52e2-11c5-4a95-9417-517147a6efaa.png">
+
+<img width="1277" alt="Screen Shot 2022-06-05 at 3 56 57 AM" src="https://user-images.githubusercontent.com/50162500/172072827-66b8dbc0-417e-4680-97a7-aa68727210c2.png">
+
+For the trailer, I used a unverise gif as background to show that the concept of the game, or the background story, is somehow related to the outer space.
+Then aftert the title "Ecplise" disappear, I choose to use text in first person narrative (Waking up, where am I?) to tell user that we - the player, just woke up and didn't know where we are, or who we are.
+Then I used two transition effect for the first room, to create the effect of blinking eyes to show that the player just wake up.
+Then I used a clip at which player walked to the door, combined with sound effect and text to show that the door is locked, implying that player needs to find a way out the escape the room, which somehow tell the audience that this game is a puzzle game.
+After that, I used a new clip, at which player pick up IDcards from control panel, then successfully walk out the room because of the item he collects.
+
+The main focus of the trailer is the part above at which focus on the beginning of the gameplay. I choose that part because I think for a puzzle solving game, the attractive part is to provide user with an interesting start of the story, tell them what is the situation now, and what is the struggle now. Instead of just having all the screenshots for the game in the trailer, only focuing on the beginning part will bring up player's curiosity.
+
+After player walked out the first room, 
+
+At the end I add a credit page which shows every team member's main role and sub role as ending.
 
 
 
