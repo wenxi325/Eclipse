@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/EnteringGame.unity
+    guid: 7f9ad817cf274214dbef278447ae7e82
+  - enabled: 1
     path: Assets/Scenes/Dorm.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -23,7 +26,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlantHouse.unity
     guid: ac9c9fae379bc5842b5c99dbd985bada
-  - enabled: 1
-    path: Assets/Scenes/EnteringGame.unity
-    guid: 7f9ad817cf274214dbef278447ae7e82
   m_configObjects: {}
