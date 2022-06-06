@@ -116,11 +116,15 @@ The `Inventory.cs` file then stores a list of class `<Item>`  that serves as a b
  ### Item Collection
  
  After the inventory is set up, I then created `CollectItem.cs` to help player gather object, and then store it into the inventory. This script should be attached to each gameobject that contains collectable items, with unique id which will be inputed in https://github.com/wenxi325/Eclipse/blob/17d13abc8b85a79d5108f5ff1197ef4128559a04/Assets/Scripts/CollectItem.cs#L14
- to represent each individual items. For example, for player to gather id card in the control panel, we simply attach the `CollectItem.cs` script to the ControlPanel game object. Then by using collision detection to detect whether the player is close enough to collect item the that game object:
+ to represent each individual items. For example, for player to gather id card in the control panel, we simply attach the `CollectItem.cs` script to the ControlPanel game object. 
+
+ 
+ Then by using collision detection to detect whether the player is close enough to collect item the that game object:
  https://github.com/wenxi325/Eclipse/blob/4e060832c1b3e980097e78c2d5e08409960020aa/Assets/Scripts/CollectItem.cs#L56-L72
  If the player is in range, a text with panel will come up on that says "Press C to collect item". 
  After C is pressed, the script will have switch statement to determine which item has been collected. For example, for the controll panel, we assign it with id:0, such that when collected, the script will create an item called `IDCard`, with `amount =5`, `and order=0`, then added to the inventory. 
  The example for collecting item and added to inventory is shown in the trailer. However, because of the technical difficulty, the script is not attached but only added to the file to avoid crashing with the dialog end.
+  https://github.com/wenxi325/Eclipse/blob/2e8792f348b13b5ea0c1628f90c5b41cbbc112ec/Assets/Scripts/CollectItem.cs#L72-L81
 
 **Add an entry for each platform or input style your project supports.**
 
