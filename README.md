@@ -130,9 +130,12 @@ Just like the dialog trigger created by Tingwei Liu, I used the collision Trigge
 
 
 
-## Game Logic
+## Game Logic -[Wenxi Cai]
 
 **Document what game states and game data you managed and what design patterns you used to complete your task.**
+Designed the integration of all game systems(hierarchy, interface of different parts), as well as coordinate others work into the main project, and deciding on the Git-based workflow to avoid conflict. 
+
+Please reference the game logic design to the file gameLogic.pdf (top-level of this repository).
 
 # Sub-Roles
 
