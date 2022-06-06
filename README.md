@@ -175,9 +175,13 @@ Then I used two transition effect for the first room, to create the effect of bl
 Then I used a clip at which player walked to the door, combined with sound effect and text to show that the door is locked, implying that player needs to find a way out the escape the room, which somehow tell the audience that this game is a puzzle game.
 After that, I used a new clip, at which player pick up IDcards from control panel, then successfully walk out the room because of the item he collects.
 
+<img width="1277" alt="Screen Shot 2022-06-05 at 5 57 20 PM" src="https://user-images.githubusercontent.com/50162500/172078235-ccf9717c-8dc5-4a14-885d-04bec31be125.png">
+
 The main focus of the trailer is the part above at which focus on the beginning of the gameplay. I choose that part because I think for a puzzle solving game, the attractive part is to provide user with an interesting start of the story, tell them what is the situation now, and what is the struggle now. Instead of just having all the screenshots for the game in the trailer, only focuing on the beginning part will bring up player's curiosity.
 
-After player walked out the first room, 
+After player walked out the first room, the pace of the trailer will go faster, with different clips of player walking in rooms, which represent the journey of solving puzzles and finding back memory. This portion comes with less detail because I don't want player to know everything about the game before play it. 
+
+The final clip is player walking up to the control bar to open the gate to the outside world, I added heartbeat and footstep and door sound effects to create the excitment for the moment. However, there will be quite open ending so the final clip will lead to the end of the trailer.
 
 At the end I add a credit page which shows every team member's main role and sub role as ending.
 
