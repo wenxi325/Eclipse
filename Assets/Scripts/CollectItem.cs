@@ -29,12 +29,9 @@ public class CollectItem : MonoBehaviour
     }
 
     private void Update(){
-        // dialog = GameObject.FindObjectOfType(typeof(dialigueTrigger)) as dialigueTrigger;
-        // if(dialog.endDialog){
             if(Input.GetKeyDown(KeyCode.C)){
             collect();
             }
-        // }
     }
 
     private void collect(){
@@ -46,7 +43,6 @@ public class CollectItem : MonoBehaviour
                 tmp.setName("IDCard");
                 tmp.setOrder(0);
                 Debug.Log(tmp.getName());
-                // Inventory.addItem(tmp);
                 inventoryObject = GameObject.FindObjectOfType(typeof(Inventory)) as Inventory;
                 inventoryObject.addItem(tmp);
                 break;
@@ -60,16 +56,10 @@ public class CollectItem : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider){
         if(collider.gameObject.tag == "Player"){
             trigger = true;
-            // if(dialog.endDialog)
-            // {
                 caption.enabled=true;
                 caption.text="press C to collect items";
                 Panel.SetActive(true);
-            // }
         }
-        // Debug.Log(collider.gameObject.tag);
-
-
     }
 
     private void OnTriggerExit2D(Collider2D collider){
@@ -77,10 +67,6 @@ public class CollectItem : MonoBehaviour
             trigger = false;
             caption.enabled=false;
             Panel.SetActive(false);
-        } 
-        // Debug.Log("exit");       
-
+        }   
     }
-
-
 }
