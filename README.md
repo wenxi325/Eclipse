@@ -74,11 +74,61 @@ Similar to the doors, the exit buttons also have a `Box Collider 2D` but enable 
 
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
-## Input
+## Input -[Keying Liu]
 
 **Describe the default input configuration.**
+The default input configuration for this game will be using arrow key: up, down, left, right. Or the WASD on keyboard to control the player to move around.
+
+### Player Movement
+
+I worked out the script `PlayerController.cs` script with Huilin Zhang together. After received the initial version for player camera controller and movement script, I edit the the player controller by following the outside source https://chowdera.com/2021/12/202112270602142589.html, at which will first gather the current player position by using `Input.GetAxis("Horizontal");` and `Input.GetAxis("Vertical");`, then setup the new position by factor in the choosen player moving speed and the `Time.deltaTime` to make it smooth.
+
+https://github.com/wenxi325/Eclipse/blob/17d13abc8b85a79d5108f5ff1197ef4128559a04/Assets/Scripts/PlayerController.cs#L20-L35
+
+### Player Collision
+
+I worked out the initial version for player collision in unity, which attach the `capusule collider 2D` for objects in the first room.
+
+<img width="184" alt="Screen Shot 2022-06-05 at 10 24 19 PM" src="https://user-images.githubusercontent.com/50162500/172100208-48fdc20b-f767-4f10-a464-27a7988833e2.png">
+
+<img width="369" alt="Screen Shot 2022-06-05 at 10 23 20 PM" src="https://user-images.githubusercontent.com/50162500/172100214-661b34c5-9d7d-4f0c-a427-61c0ff28ac97.png">
+I used both vertical or horizontal mode to make sure the collider field fit the object, such that when player moves close to it, it will not overlap with the object, like the box/bed the player woke up at, the controller panel when player come close by.
+The newer version for player collision is then implemented and improved by Huilin Zhang to extend it to other room.
+
+### Inventory system
+
+For inventory system, I created `items.cs` and `Inventory.cs` and `CollectItem.cs`. The `items.cs` serves as class to store property for each collectable object and to monitor their state.
+https://github.com/wenxi325/Eclipse/blob/17d13abc8b85a79d5108f5ff1197ef4128559a04/Assets/Scripts/Item.cs#L7-L36
+for each scriptable/collectable object, it has property of name, order number and amount. Where the amount is set to defaul of 1, assuming each object is unique beside specially situation like ID Cards, where we have total of five ID cards for all five people in the room. The order number represents which object we are collecting in the game. The game comes with a-j planned items, corresponding to 10 object in total. So that we can better manage which object the player currently have in the hand to assist with puzzle solving. 
+
+I initially wanted to created separate class for each item, just like `IDCard.cs` to keep more unique and detailed information for each object, however I ened up with a more general approach by creating a class of `Item.cs` to better adopt to various object.
+
+The `Inventory.cs` file then stores a list of class `<Item>`  that serves as a backpack to manage what player have in total. I was trying to make inventory accessable by clicking on the upper right corner backpack icon using `OnMouseDown()`, somehow it doesn't work, so I also added a `OnKeyDown(KeyCode.B)` on `Update()` such that when player press B on keyboard, the inventory will bring up to the screen to player.
+
+ https://github.com/wenxi325/Eclipse/blob/17d13abc8b85a79d5108f5ff1197ef4128559a04/Assets/Scripts/Inventory.cs#L53-L72
+  The inventory is presented in Text form, which will first read from the list, then print out the items in the list with property. The inventory will only be visiable when user press B or click the icon(icon failed).
+  
+  The inventory should be attached to the topright icon gameobject, and all other script should be able to access the content of the inventory by using 
+  `GameObject.FindObjectOfType(typeof(Inventory)) as Inventory` 
+  
+  The inventory has add and delete item method that support the collection and usage of items in the inventory. The add and delte method will ensure that if the item does exist before deletion and the item doesn't exist before addition to avoid duplication or deletion of nonexisting item.
+  
+ ### Item Collection
+ 
+ After the inventory is set up, I then created `CollectItem.cs` to help player gather object, and then store it into the inventory. This script should be attached to each gameobject that contains collectable items, with unique id which will be inputed in https://github.com/wenxi325/Eclipse/blob/17d13abc8b85a79d5108f5ff1197ef4128559a04/Assets/Scripts/CollectItem.cs#L14
+ to represent each individual items. For example, for player to gather id card in the control panel, we simply attach the `CollectItem.cs` script to the ControlPanel game object. Then by using collision detection to detect whether the player is close enough to collect item the that game object:
+ https://github.com/wenxi325/Eclipse/blob/4e060832c1b3e980097e78c2d5e08409960020aa/Assets/Scripts/CollectItem.cs#L56-L72
+ If the player is in range, a text with panel will come up on that says "Press C to collect item". 
+ After C is pressed, the script will have switch statement to determine which item has been collected. For example, for the controll panel, we assign it with id:0, such that when collected, the script will create an item called `IDCard`, with `amount =5`, `and order=0`, then added to the inventory. 
+ The example for collecting item and added to inventory is shown in the trailer. However, because of the technical difficulty, the script is not attached but only added to the file to avoid crashing with the dialog end.
 
 **Add an entry for each platform or input style your project supports.**
+
+### PuzzleTrigger
+Just like the dialog trigger created by Tingwei Liu, I used the collision Trigger to detect if a puzzle is reached. The player can press `Key.Tab` to active the text box saying that it is now time to solve the puzzle, By plan, each puzzle should come with unique id, such that by using switch statment, the puzzleTrigger will know which puzzle should be directed to. https://github.com/wenxi325/Eclipse/blob/4e060832c1b3e980097e78c2d5e08409960020aa/Assets/Scripts/puzzleTrigger.cs#L12.
+
+
+
 
 ## Game Logic
 
