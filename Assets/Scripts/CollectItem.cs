@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class CollectItem : MonoBehaviour
 {
     public Inventory inventoryObject;
-    // public dialigueTrigger dialog;
     public bool trigger;
     public Text caption;
     public GameObject Panel; 
@@ -38,20 +37,47 @@ public class CollectItem : MonoBehaviour
         if(trigger){
               switch(puzzleID){
             case 0:
-                Item tmp = ScriptableObject.CreateInstance<Item>();
-                tmp.setAmount(5);
-                tmp.setName("IDCard");
-                tmp.setOrder(0);
-                Debug.Log(tmp.getName());
-                inventoryObject = GameObject.FindObjectOfType(typeof(Inventory)) as Inventory;
-                inventoryObject.addItem(tmp);
+                CreateItem("IDcard", 5, 0);
+                break;
+            case 1:
+                CreateItem("DeadBody",1,1);
+                break;
+            case 2:
+                CreateItem("meteorite fragments",1,2);
+                break;
+            case 3:
+                CreateItem("Plant", 1,3);
+                break;
+            case 4:
+                CreateItem("Container",1,4);
+                break;
+            case 5:
+                CreateItem("key",1,5);
+                break;
+            case 6:
+                CreateItem("compass",1,6);
+                break;
+            case 7:
+                CreateItem("crowbar",1,7);
+                break;
+            case 8:
+                CreateItem("recorder",1,8);
                 break;
             default:
                 break;
         }
 
         }
-      
+    }
+    private void CreateItem(string tmpname, int tmpAmount, int tmpOrder)
+    {
+        Item tmp = ScriptableObject.CreateInstance<Item>();
+        tmp.setAmount(tmpAmount);
+        tmp.setName(tmpname);
+        tmp.setOrder(tmpOrder);
+        Debug.Log(tmp.getName());
+        inventoryObject = GameObject.FindObjectOfType(typeof(Inventory)) as Inventory;
+        inventoryObject.addItem(tmp);
     }
     private void OnTriggerEnter2D(Collider2D collider){
         if(collider.gameObject.tag == "Player"){
