@@ -8,8 +8,6 @@ public class Inventory : MonoBehaviour
 {
 	List<Item> Items = new List<Item>();
     [SerializeField] private GameObject icon;
-
-    // List<GameObject> Items= new List<GameObject>();
     public Text caption;
     public GameObject Panel; 
     private bool isOpen;
@@ -26,7 +24,9 @@ public class Inventory : MonoBehaviour
     }
 
     public void deleteItem(Item Item){
-        Items.Remove(Item);
+        if(Items.IndexOf(Item) != -1){
+             Items.Remove(Item);
+        }
     }
 
     public void toggleBool(){
