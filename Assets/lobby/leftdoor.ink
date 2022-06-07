@@ -1,0 +1,3 @@
+It seems that I can get in by swipping ID card. Thanks god I brought it with me.
+A machine that can produce anything you want......
+Well this must be Bob's invention.
