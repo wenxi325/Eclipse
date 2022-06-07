@@ -67,7 +67,9 @@ The `DoorController.cs` script in the `Doors` folder manages the door transporta
 ![Build setting](./images/build_setting.png)
 
 Here is an example of how my script will work: Let's say the player enters a door that has a tag "Lobby_up_right", indicates that he is trying to enter the up-right door in the lobby. In our settings, the up-right lobby door is connected to the data room. The `Lobby` scene is at *level 1* while the `DataRoom` scene is at *level 3*, so I will add 2 to the current `buildIndex` so that it gets to the `DataRoom` scene.
-https://github.com/wenxi325/Eclipse/blob/a9165cc5ffed2a679cfe4389daff6c5e2e0f9dd0/Assets/Scripts/Doors/DoorController.cs#L75-L77
+https://github.com/
+
+ 325/Eclipse/blob/a9165cc5ffed2a679cfe4389daff6c5e2e0f9dd0/Assets/Scripts/Doors/DoorController.cs#L75-L77
 On the other hand, if the player is trying to go back to the `Lobby` from `DataRoom`, subtract 2 from the `buildIndex` to reach *level 1*.https://github.com/wenxi325/Eclipse/blob/a9165cc5ffed2a679cfe4389daff6c5e2e0f9dd0/Assets/Scripts/Doors/DoorController.cs#L84-L86
 
 ###### **Exit Button**
@@ -145,7 +147,6 @@ Just like the dialog trigger created by Tingwei Liu, I used the collision Trigge
 
 ## Game Logic -[Wenxi Cai]
 
-**Document what game states and game data you managed and what design patterns you used to complete your task.**
 Designed the integration of all game systems(hierarchy, interface of different parts), as well as coordinate others work into the main project, and deciding on the Git-based workflow to avoid conflict. 
 
 Please reference the game logic design to the file gameLogic.pdf (top-level of this repository).
