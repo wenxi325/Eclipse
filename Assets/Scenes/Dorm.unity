@@ -2432,7 +2432,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423195599}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -134.5, y: 40.5, z: 0}
+  m_LocalPosition: {x: -132.7, y: 68.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1422894554}
@@ -5164,7 +5164,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 1571.2567, w: 0}
+  m_margin: {x: 0, y: 0, z: 60.993652, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7138,7 +7138,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285106648}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -183.51703, y: -88.744514, z: 0}
+  m_LocalPosition: {x: -122.9, y: -33.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 5.64302}
   m_Children: []
   m_Father: {fileID: 914678954}

@@ -1,2 +1,2 @@
-This is Selen, she is an Biologist.
-Finally one people have thier name properly written on the freezer.
+Oh no, this freezer is broken, I can't see the words.
+What is his/her name? Please match the ID card with the freezer.
