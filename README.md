@@ -25,7 +25,16 @@ Here is an example:
 
 You should replay any **bold text** with your relevant information. Liberally use the template when necessary and appropriate.
 
-## User Interface
+## User Interface- [TingweiLiu]
+
+### Overall UI design
+
+### Narrative board
+
+### Save and Continue Button
+
+### Packet Button Controller
+
 
 ## Movement/Physics - [Huilin Zhang]
 
@@ -184,6 +193,15 @@ https://github.com/wenxi325/Eclipse/blob/8f57430afdbe6a958e7b04807eab52b631a0e8b
 ## Narrative Design
 
 **Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
+### Overall design of the game flow
+
+I provide a basic flow of the game, Including the information included in the start up sheet, the choice diagram, the map of the whole game. I am also contributed to the designing of the puzzle. For example, in the dorm room, the player need to interact with each freezer to get enough information to match specific ID card to the freezer. 
+
+
+### Specific Stroy
+
+Almost all the prefab in our game are interactable. In this way, all those narratives will help player get the overall story layer by layer. I use the ink file, which is also attached in the unity asset story, to make script for different prefabs. I also include the button controller to detect user's choice. The return value by the button controller will connect with the input to compare whether the user solve the puzzle correctly
+
 
 ## Press Kit and Trailer
 
