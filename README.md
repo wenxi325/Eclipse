@@ -28,6 +28,8 @@ You should replay any **bold text** with your relevant information. Liberally us
 ## User Interface- [TingweiLiu]
 
 ### Overall UI design
+![Capture](https://user-images.githubusercontent.com/73724769/172518919-e574fac7-614f-4a90-b0d8-d31ef19c7476.PNG)
+
 
 ### Narrative board
 
