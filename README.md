@@ -29,13 +29,66 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 ### Overall UI design
 ![Capture](https://user-images.githubusercontent.com/73724769/172518919-e574fac7-614f-4a90-b0d8-d31ef19c7476.PNG)
+I design the overall interface of the game. Including the front page, continue/start/help button attatched(First column of the design). 
+
+The second and third are the panel that is used in the game. The last line is the pop-up panel that should be attached when user planning the exit the game. 
+
+The last picture on the bottom right corner is the design for the backpack panel.
+
+For the designing part, I used Figma to do the designing. In unix, I design them on the UI under Canvas. The specific function and machnism are described below.
 
 
 ### Narrative board
+The narrative board is a story board under Canvas-> Panel -> Dialogue panel. 
+
+The basic machnism is that when the player get close to the object and click left button on the mouse, the dialogue panel poped up. 
+
+If there is actions need to achieve (for example, in the first room, when user wish to inceract with the board hanging the ID card, after reading the dialogue panel, there will be a pair of button pops up: do you want to pick up the ID card. Player can choose yes or no. 
+
+I use the Collision 2D with the "is trigger" property being checked. By doing this, the user can actually get through the collision box and use the function OnTriggerEnter2D to detect player enter the area and OnTriggerExit2D detect the player exit the effective area. 
+
+https://github.com/wenxi325/Eclipse/blob/92f6d46ab4dc8d5909df299693c2adada985e6bf/Assets/Scripts/dialogue/dialigueTrigger.cs#L34
+https://github.com/wenxi325/Eclipse/blob/92f6d46ab4dc8d5909df299693c2adada985e6bf/Assets/Scripts/dialogue/dialigueTrigger.cs#L43
+
+After detecting the user place, Dialogue Manager will pop-up the panel and load related ink script(ink is an API that I use to write game narrative) and load each line by line. 
+
+For this part I use gameObject.GetComponnet(), to get the related script. 
+https://github.com/wenxi325/Eclipse/blob/92f6d46ab4dc8d5909df299693c2adada985e6bf/Assets/Scripts/dialogue/DialogueManager.cs#L44
+
+I also use TextMashPro when loading the Text. 
+
+There is also a "continue" button, a black arrow, that user right click it will get to the next page of the narrative, this is achieved by continue stroy function. 
+https://github.com/wenxi325/Eclipse/blob/92f6d46ab4dc8d5909df299693c2adada985e6bf/Assets/Scripts/dialogue/DialogueManager.cs#L104
+
+If not reach the end of the text, load the next line, if reach the last line, check if there is button action need, if not return. 
+
+For the button action, there is a button controller in the file ButtonContro.cs. Initially the button isActive was set to false. If reach end of the dialogue text AND button action needed. Button will poped up and load related word on the button. Then, based on the true and false is chosen, button will be linked to different method by attaching different method on OnClick() panel of the button.
+
+![Panel](https://user-images.githubusercontent.com/73724769/172522218-b4f4cda2-e528-4b94-92c8-fbbafd383146.PNG)
+
+Related file: 
+DialogueManager.cs
+DialogueTrigger.cs
+ButtonContro.cs
+All the ink file and ink json file in the dialogue folder.
+
+
+The resources I used are listed below: 
+ink file and dialoguemanager: https://www.youtube.com/watch?v=vY0Sk93YUhA&t=1501s
+buttoncontroller: https://www.youtube.com/watch?v=kdkrjCF0KCo&t=186s
+
 
 ### Save and Continue Button
+Save and continue Button was implemented in the starting page of the prefab. 
 
-### Packet Button Controller
+For this part, I only save the position of player. When clicking the continue button, the player will popped from the previously exit position. If User click the start, the game will start from the first room, this part was implemented in the player controller. 
+
+https://github.com/wenxi325/Eclipse/blob/92f6d46ab4dc8d5909df299693c2adada985e6bf/Assets/Scripts/Doors/DoorController.cs#L70
+
+When clicking the save button in the game, the data will generate a data file attached in the DataPersistentManager, saving all the position of the player. Next time when clicking the continue, the player will landed on the previously saved position. 
+
+related resources: 
+https://www.youtube.com/watch?v=aUi9aijvpgs&t=52s
 
 
 ## Movement/Physics - [Huilin Zhang]
@@ -198,12 +251,21 @@ https://github.com/wenxi325/Eclipse/blob/8f57430afdbe6a958e7b04807eab52b631a0e8b
 **Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
 ### Overall design of the game flow
 
-I provide a basic flow of the game, Including the information included in the start up sheet, the choice diagram, the map of the whole game. I am also contributed to the designing of the puzzle. For example, in the dorm room, the player need to interact with each freezer to get enough information to match specific ID card to the freezer. 
+I provide a basic flow of the game, Including the information included in the start up sheet, the choice diagram, the map of the whole game.
+https://docs.google.com/document/d/1X6OLzntLpqcz42uO2AYNfSbYv3h7j1ntmJhkuGhwc-Q/edit#heading=h.7zpb0uke0erx
+
+In this doc,I comes up with the story of the whole game, including the cause of frezzing project, the timeline of players exploring and the end of the player. I am also contributed to the designing of the puzzle. For example, in the dorm room, the player need to interact with each freezer to get enough information to match specific ID card to the freezer. 
 
 
 ### Specific Stroy
 
 Almost all the prefab in our game are interactable. In this way, all those narratives will help player get the overall story layer by layer. I use the ink file, which is also attached in the unity asset story, to make script for different prefabs. I also include the button controller to detect user's choice. The return value by the button controller will connect with the input to compare whether the user solve the puzzle correctly
+
+In the game, all the narrative are condensed to the interactive lines shown up on the panel. Narrative are controbuted the main clue of solveing the puzzle. By carefully reading the information attached on gameobjects the user will get the hint of solving the puzzle. 
+
+![Panel](https://user-images.githubusercontent.com/73724769/172524622-ad17fb5f-a983-46fe-b5ae-6f127cfc8b71.PNG)
+
+For example, when user interact with this poster on the wall, he will get the whole timeline of how moon was gradually destroyed by human war. Based on the timeline shown by the story, the player can edit four clock attached on the right corner of the wall, which will help unlocking the door of the plant room
 
 
 ## Press Kit and Trailer
