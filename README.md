@@ -83,6 +83,12 @@ Save and continue Button was implemented in the starting page of the prefab.
 
 For this part, I only save the position of player. When clicking the continue button, the player will popped from the previously exit position. If User click the start, the game will start from the first room, this part was implemented in the player controller. 
 
+This is achieved by GameSavor.cs, when awake, it checks whether there is previous save data that need to load by loadGame(). 
+
+Then, when button is clicked, caled saveGame() and return a json data, transport this data to the PersistenceController and return a datafile. 
+
+Next time Continue button is clicked, the PersistenceController will convert the json to the data, pass to the GameSavor.cs, call loadGame() and previous position will be loaded. 
+
 https://github.com/wenxi325/Eclipse/blob/92f6d46ab4dc8d5909df299693c2adada985e6bf/Assets/Scripts/Doors/DoorController.cs#L70
 
 When clicking the save button in the game, the data will generate a data file attached in the DataPersistentManager, saving all the position of the player. Next time when clicking the continue, the player will landed on the previously saved position. 
